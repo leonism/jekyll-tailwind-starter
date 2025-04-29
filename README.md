@@ -1,6 +1,6 @@
-# Jekyll Tailwind Starter - Renva Clone
+# Jekyll Tailwind Starter
 
-This is a starter project for building static websites using Jekyll and Tailwind CSS. It aims to replicate the look and feel of the [Renva](https://renva.netlify.app/) portfolio template.
+This starter project provides a basic Jekyll setup, integrates Tailwind CSS v3 via PostCSS, and includes a responsive design approach. The project also has a component structure using Jekyll includes, and it offers a streamlined build process. It requires Ruby, Bundler, Node.js, and npm as prerequisites. It includes a simple development server and build process.
 
 ## Features
 

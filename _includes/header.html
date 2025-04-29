@@ -1,0 +1,42 @@
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-transparent py-6">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="{{ '/' | relative_url }}" class="text-2xl font-bold text-primary">
+      Renva
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="text-primary hover:text-accent transition-colors duration-200 font-medium">Home</a>
+      <a href="#about" class="text-primary hover:text-accent transition-colors duration-200 font-medium">About</a>
+      <a href="#services" class="text-primary hover:text-accent transition-colors duration-200 font-medium">Services</a>
+      <a href="#portfolio" class="text-primary hover:text-accent transition-colors duration-200 font-medium">Portfolio</a>
+      <a href="#contact" class="text-primary hover:text-accent transition-colors duration-200 font-medium">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-accent hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <!-- Menu Icon -->
+        <svg id="menu-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <!-- Close Icon -->
+        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-background shadow-lg py-4 transition-transform duration-300 ease-in-out transform -translate-y-full">
+    <nav class="container mx-auto px-4 flex flex-col space-y-4">
+      <a href="#home" class="text-primary hover:text-accent transition-colors duration-200 font-medium text-center mobile-menu-link">Home</a>
+      <a href="#about" class="text-primary hover:text-accent transition-colors duration-200 font-medium text-center mobile-menu-link">About</a>
+      <a href="#services" class="text-primary hover:text-accent transition-colors duration-200 font-medium text-center mobile-menu-link">Services</a>
+      <a href="#portfolio" class="text-primary hover:text-accent transition-colors duration-200 font-medium text-center mobile-menu-link">Portfolio</a>
+      <a href="#contact" class="text-primary hover:text-accent transition-colors duration-200 font-medium text-center mobile-menu-link">Contact</a>
+    </nav>
+  </div>
+</header>

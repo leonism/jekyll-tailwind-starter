@@ -1,0 +1,15 @@
+
+- icon_name: map-pin
+  title: 'Our Address'
+  lines: ['A108 Adam Street, New York, NY 535022']
+  isLink: false
+- icon_name: mail
+  title: 'Email Us'
+  lines: ['info@example.com', 'contact@example.com']
+  isLink: true
+  hrefPrefix: 'mailto:'
+- icon_name: phone
+  title: 'Call Us'
+  lines: ['+1 5589 55488 55', '+1 6678 254445 41']
+  isLink: true
+  hrefPrefix: 'tel:'

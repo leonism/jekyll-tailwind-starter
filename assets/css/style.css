@@ -1,0 +1,108 @@
+---
+# Front matter tells Jekyll to process this file
+---
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* #ffffff */
+    --foreground: 210 10% 23%; /* #343a40 */
+    --card: 0 0% 100%;
+    --card-foreground: 210 10% 23%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 10% 23%;
+    --primary: 210 10% 23%; /* #343a40 - Used for headings, primary text */
+    --primary-foreground: 0 0% 100%; /* #ffffff */
+    --secondary: 210 17% 98%; /* #f8f9fa - Light gray sections */
+    --secondary-foreground: 210 10% 23%;
+    --muted: 210 17% 98%; /* #f8f9fa */
+    --muted-foreground: 210 9% 45%; /* #6c757d - Lighter text */
+    --accent: 0 100% 71%; /* #ff6b6b - Reddish-pink accent */
+    --accent-foreground: 0 0% 100%; /* #ffffff */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 16% 91%; /* #dee2e6 */
+    --input: 210 16% 91%;
+    --ring: 0 100% 71%; /* #ff6b6b - Focus ring */
+    --radius: 0.5rem; /* Slightly rounded corners like Renva */
+
+    /* Chart colors (kept defaults, adjust if needed) */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif; /* Use Poppins */
+  }
+  h1, h2, h3, h4, h5, h6 {
+     @apply font-semibold text-primary;
+  }
+  h1 { @apply text-4xl lg:text-5xl; }
+  h2 { @apply text-3xl lg:text-4xl; }
+  h3 { @apply text-2xl lg:text-3xl; }
+  h4 { @apply text-xl lg:text-2xl; }
+  p { @apply text-base text-muted-foreground leading-relaxed; }
+  /* section { @apply py-16 lg:py-24; } Common section padding handled in includes */
+}
+
+/* Custom utility for the primary accent color text */
+.text-accent {
+  color: hsl(var(--accent));
+}
+.bg-accent {
+  background-color: hsl(var(--accent));
+}
+.border-accent {
+    border-color: hsl(var(--accent));
+}
+.ring-accent {
+    --tw-ring-color: hsl(var(--accent));
+}
+/* Hover state for accent buttons */
+.hover\:bg-accent-dark:hover {
+  background-color: hsl(0, 100%, 65%); /* Slightly darker shade */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Header scroll effect */
+#header.scrolled {
+  @apply bg-background shadow-md py-4;
+}
+#header:not(.scrolled) {
+   @apply bg-transparent py-6;
+}
+
+/* Mobile menu toggle styles */
+#mobile-menu.open {
+  @apply block translate-y-0;
+}

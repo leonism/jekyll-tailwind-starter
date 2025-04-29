@@ -1,0 +1,54 @@
+<section id="portfolio" class="bg-background py-16 lg:py-24">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-primary mb-2">Portfolio</h2>
+      <div class="inline-block w-16 h-1 bg-accent mb-4"></div>
+      <p class="text-muted-foreground max-w-3xl mx-auto">
+        Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center mb-12 space-x-2" id="portfolio-filters">
+      <button data-filter="all" class="portfolio-filter-button active rounded-full px-4 py-1 h-auto text-sm font-medium transition-colors duration-200 bg-accent text-accent-foreground border-accent hover:bg-accent/90">All</button>
+      <button data-filter="app" class="portfolio-filter-button rounded-full px-4 py-1 h-auto text-sm font-medium transition-colors duration-200 text-primary border border-border hover:bg-accent/10 hover:text-accent hover:border-accent/50">App</button>
+      <button data-filter="card" class="portfolio-filter-button rounded-full px-4 py-1 h-auto text-sm font-medium transition-colors duration-200 text-primary border border-border hover:bg-accent/10 hover:text-accent hover:border-accent/50">Card</button>
+      <button data-filter="web" class="portfolio-filter-button rounded-full px-4 py-1 h-auto text-sm font-medium transition-colors duration-200 text-primary border border-border hover:bg-accent/10 hover:text-accent hover:border-accent/50">Web</button>
+    </div>
+
+    {% assign portfolio_items = site.data.portfolio %}
+    <!-- Portfolio Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+      {% for item in portfolio_items %}
+      <div class="portfolio-item group overflow-hidden rounded-lg border-none shadow-sm relative {{ item.category }}" data-category="{{ item.category }}">
+        <div class="p-0">
+         <img
+           src="{{ item.imageUrl }}"
+           alt="{{ item.title }}"
+           width="600"
+           height="400"
+           loading="lazy"
+           class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+         />
+         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100">
+            <div>
+                 <h4 class="text-lg font-semibold text-white mb-1">{{ item.title }}</h4>
+                 <p class="text-sm text-gray-300 capitalize">{{ item.category }}</p>
+            </div>
+           <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+             <button type="button" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9 bg-accent/80 hover:bg-accent border-none rounded-full text-white">
+               {% include icons/plus.svg class="h-5 w-5" %}
+               <span class="sr-only">View Details</span>
+             </button>
+             <a href="#" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 w-9 bg-accent/80 hover:bg-accent border-none rounded-full text-white">
+                {% include icons/link.svg class="h-5 w-5" %}
+               <span class="sr-only">Visit Link</span>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
